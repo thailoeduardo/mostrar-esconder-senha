@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <!-- CDN Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style>
+    .box {
+      width: 500px;
+      height: auto;
+      padding: 5px;
+      margin: 10% auto;
+      background-color: #fff;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .password {
+      width: 300px;
+      height: 40px;
+      padding: 0px 10px;
+      border:1px solid #ddd;
+    }
+
+    .btn {
+      height: 40px;
+      border:1px solid #ddd;
+      cursor: pointer;
+      background: red; /* For browsers that do not support gradients */
+       background: -webkit-linear-gradient(30deg, #eee, #fff); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(30deg, #eee, #fff); /* For Opera 11.1 to 12.0 */
+         background: -moz-linear-gradient(30deg, #eee, #fff); /* For Firefox 3.6 to 15 */
+          background: linear-gradient(30deg, #eee, #fff); /* Standard syntax */
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <input class="password" id="password"  type="password">
+      <button class="btn" id="btn"><span class="glyphicon glyphicon-eye-open"  id="eye" aria-hidden="false"></span></button>  
+  </div>
+  <script>
+      var pass = document.getElementById('password');
+      var eye = document.getElementById('eye');
+      var btn =  document.getElementById('btn');
+
+
+      btn.addEventListener('click', showPass, false);
+
+      function showPass () {
+        if (pass.type == 'password' ) {
+          pass.type = 'text';
+          eye.classList.remove('glyphicon-eye-open');
+          eye.classList.add('glyphicon-eye-close');
+        } else{
+          pass.type = 'password';
+          eye.classList.remove('glyphicon-eye-close');
+          eye.classList.add('glyphicon-eye-open');
+         }
+      };
+  </script>
+</body>
+</html>
