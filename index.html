@@ -7,62 +7,64 @@
   <link rel="stylesheet" href="">
   <!-- CDN Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
   <style>
     .box {
       width: 500px;
       height: auto;
       padding: 5px;
       margin: 10% auto;
+      text-align: center;      
+      box-sizing: border-box;     
       background-color: #fff;
-      box-sizing: border-box;
-      text-align: center;
     }
 
-    .password {
-      width: 300px;
-      height: 40px;
-      padding: 0px 10px;
-      border:1px solid #ddd;
-    }
+      .password {
+        width: 300px;
+        height: 40px;
+        padding: 0px 10px;
+        border:1px solid #ddd;
+      }
 
-    .btn {
-      height: 40px;
-      border:1px solid #ddd;
-      cursor: pointer;
-      background: red; /* For browsers that do not support gradients */
-       background: -webkit-linear-gradient(30deg, #eee, #fff); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(30deg, #eee, #fff); /* For Opera 11.1 to 12.0 */
-         background: -moz-linear-gradient(30deg, #eee, #fff); /* For Firefox 3.6 to 15 */
-          background: linear-gradient(30deg, #eee, #fff); /* Standard syntax */
-    }
-
+      .btn {
+        height: 40px;
+        cursor: pointer;
+        border:1px solid #ddd;
+        background: #eee; 
+         background: -webkit-linear-gradient(30deg, #eee, #fff); 
+          background: -o-linear-gradient(30deg, #eee, #fff); 
+           background: -moz-linear-gradient(30deg, #eee, #fff); 
+            background: linear-gradient(30deg, #eee, #fff); 
+      }
   </style>
+
 </head>
 <body>
 
   <div class="box">
     <input class="password" id="password"  type="password">
-      <button class="btn" id="btn"><span class="glyphicon glyphicon-eye-open"  id="eye" aria-hidden="false"></span></button>  
+      <button class="btn" id="btn"><span class="glyphicon glyphicon-eye-open" id="eye" aria-hidden="false"></span></button>  
   </div>
+
   <script>
       var pass = document.getElementById('password');
       var eye = document.getElementById('eye');
       var btn =  document.getElementById('btn');
 
-
       btn.addEventListener('click', showPass, false);
 
       function showPass () {
-        if (pass.type == 'password' ) {
+        if (pass.type == 'password') {
           pass.type = 'text';
           eye.classList.remove('glyphicon-eye-open');
           eye.classList.add('glyphicon-eye-close');
-        } else{
+        } else {
           pass.type = 'password';
           eye.classList.remove('glyphicon-eye-close');
           eye.classList.add('glyphicon-eye-open');
          }
       };
   </script>
+
 </body>
 </html>
